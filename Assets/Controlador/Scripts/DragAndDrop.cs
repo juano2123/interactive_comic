@@ -26,6 +26,10 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("inicio drag");
+        //le bajamos un poco al alfa para que sea transparente
+        canvasGroup.alpha = .6f;
+        //bloqueamos raycast, asi que sigue la seleccion a cosas de abajo
+        canvasGroup.blocksRaycasts = false;
     }
 
     //esto llama cada frame cuando hacemos drag al objeto
@@ -40,6 +44,10 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("fin drag");
+        //ledevolvemos el alfa para que sea normal
+        canvasGroup.alpha = 1f;
+        //aqui activamos raycast de nuevo
+        canvasGroup.blocksRaycasts = true;
     }
 
     //IP es oara detectar click en objeto
