@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class CuboArrastrable : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
     public Image barraDeProgreso; // Imagen de la barra de progreso
-    public string ChorroDeAgua = "ChorroDeAgua"; // Etiqueta del objeto del chorro de agua
+    public string ChorroDeAgua = "ChorroDseAgua"; // Etiqueta del objeto del chorro de agua
     public float tiempoParaLlenar = 10f; // Tiempo necesario para llenar la barra
 
     private RectTransform rectTransform;
