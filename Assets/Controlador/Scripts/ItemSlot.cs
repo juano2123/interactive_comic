@@ -18,6 +18,9 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     //textMesh que llamamos para actualizar el contador
     public TextMeshProUGUI textoTotalObjetos;
 
+    //distancia en Y para bajar el objeto
+    public float distanciaY;
+
     //mas referencia a 
     private void Start()
     {
@@ -27,6 +30,9 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         imagen.color = new Color(imagen.color.r, imagen.color.g, imagen.color.b, 0f);
         //inicializando el texto
         textoTotalObjetos.text = "0/3"; // Inicializar el texto en "0/3"
+
+        //inicializar distancia en y para abajo
+        distanciaY = 50f;
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -37,7 +43,12 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
         if (eventData.pointerDrag != null && eventData.pointerDrag.CompareTag(requiredTag))
         {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            //comentada antigua forma para alinear
+            //eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            //nueva forma de alinear
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = new Vector2(
+                GetComponent<RectTransform>().anchoredPosition.x,
+                GetComponent<RectTransform>().anchoredPosition.y - distanciaY); // Alineación con offset en Y
             objetosAEnCasilla++;
             totalObjetosAEnCasillas++;
             // Actualizar el texto del TextMeshPro con el nuevo valor

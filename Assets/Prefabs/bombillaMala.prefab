@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6526567146749120025}
   - component: {fileID: 6526567146749120028}
   - component: {fileID: 6526567146749120027}
-  - component: {fileID: 6526567146749120026}
   - component: {fileID: 6526567146749120029}
+  - component: {fileID: 5214416830777190541}
   m_Layer: 6
   m_Name: bombillaMala
   m_TagString: Untagged
@@ -78,19 +78,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6526567146749120026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6526567146749120024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 674368ad967ca8f43967392fbb5281c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
 --- !u!225 &6526567146749120029
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -103,3 +90,15 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &5214416830777190541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6526567146749120024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75e7301fe6a55d944b9a04273279fe0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
