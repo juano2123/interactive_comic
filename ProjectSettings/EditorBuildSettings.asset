@@ -4,6 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Vista/Scenes/Inicio de juego 3.unity
+    guid: cf181b937abdd2245a625fa03ffb3e0f
+  - enabled: 1
+    path: Assets/Vista/Scenes/MiniJuego3.unity
+    guid: 784cb49d0a4c17547a382767cf9a0427
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 44a5bcb369abb4944810c1de00e392be, type: 2}
