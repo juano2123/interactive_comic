@@ -4,6 +4,19 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Vista/Scenes/MiniJuego1.unity
+    guid: c850ee8c3b14cc8459e7e186857cf567
+  - enabled: 1
+    path: Assets/Vista/Scenes/MiniJuego2.unity
+    guid: 64607145498b5284d83e2d700860d10b
+  - enabled: 1
+    path: Assets/Vista/Scenes/MiniJuego3.unity
+    guid: 784cb49d0a4c17547a382767cf9a0427
+  - enabled: 1
+    path: Assets/Vista/Scenes/MiniJuego4.unity
+    guid: b89588e37742d53479ad4ce8a0076edd
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: f67727a496e5e874193c82ec9859fa76, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 44a5bcb369abb4944810c1de00e392be, type: 2}
