@@ -43,6 +43,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
     private void ActivarOtrosScripts()
     {
+
         // Aquí puedes activar otros scripts o realizar acciones adicionales
     }
 }

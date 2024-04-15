@@ -10,7 +10,9 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
 
+
     private bool estaBloqueado = false; // Nuevo booleano para indicar si el objeto está bloqueado
+
 
     private void Awake()
     {
@@ -20,7 +22,9 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+
         if (!estaBloqueado) // Solo permitir drag si el objeto no está bloqueado
+
         {
             canvasGroup.alpha = .6f;
             canvasGroup.blocksRaycasts = false;
@@ -46,15 +50,21 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler,
         Debug.Log("click objeto");
     }
 
+
     // Método para bloquear el objeto
+
     public void BloquearObjeto()
     {
         estaBloqueado = true;
     }
 
+
     // Método para desbloquear el objeto
+
     public void DesbloquearObjeto()
     {
         estaBloqueado = false;
     }
+
 }
+
