@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - BombillaBuena
+  - basuragris
+  - basuraazul
+  - basuraverde
   layers:
   - Default
   - TransparentFX
