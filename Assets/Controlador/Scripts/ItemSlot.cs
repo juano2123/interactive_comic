@@ -1,44 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//agregando para manejar eventos
 using UnityEngine.EventSystems;
 
 public class ItemSlot : MonoBehaviour, IDropHandler
 {
-    // Etiqueta requerida para el objeto A
-    public string requiredTag = "BombillaBuena"; 
-    // Variable que cuenta objetos puestos
-    public int objetosAEnCasilla = 0;
+    public string requiredTag = "BombillaBuena";
+    private int objetosAEnCasilla = 0;
+    public static int totalObjetosAEnCasillas = 0;
 
-    //esto es para soltar el objeto en un lugar
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("Objeto soltado");
-        //hagamos que se adiera el otro objeto (con tag correcta y abajo incorrecta)
-        if (eventData.pointerDrag != null && eventData.pointerDrag.CompareTag(requiredTag)) {
-            //anclarlo a la casilla
+
+        if (objetosAEnCasilla >= 1 || totalObjetosAEnCasillas >= 3) return;
+
+        if (eventData.pointerDrag != null && eventData.pointerDrag.CompareTag(requiredTag))
+        {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-            // Incrementar el contador de objetos A en la casilla B
             objetosAEnCasilla++;
-            // Verificar si se han llenado suficientes casillas B
-            if (objetosAEnCasilla >= 3)
+            totalObjetosAEnCasillas++;
+            if (totalObjetosAEnCasillas >= 3)
             {
-                // Aquí puedes activar otros scripts o ejecutar cualquier acción necesaria
-                Debug.Log("Se han llenado suficientes casillas B");
-                // Llamar a una función o método que active otros scripts o realice alguna acción adicional
+                Debug.Log("Se han llenado suficientes casillas B con objetos A");
                 ActivarOtrosScripts();
             }
-        } else if (eventData.pointerDrag != null) 
-        {
-            //anclarlo a la casilla
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            // Bloquear el objeto A colocado
+            eventData.pointerDrag.GetComponent<DragAndDrop>().BloquearObjeto();
         }
     }
 
-    // Método para activar otros scripts o realizar acciones adicionales
+    public void RetirarObjetoA()
+    {
+        if (objetosAEnCasilla > 0)
+        {
+            objetosAEnCasilla--;
+            totalObjetosAEnCasillas--;
+            // Desbloquear el objeto A retirado
+            GetComponentInChildren<DragAndDrop>().DesbloquearObjeto();
+        }
+    }
+
     private void ActivarOtrosScripts()
     {
-        // Aquí puedes activar otros scripts o realizar acciones adicionales
+        // AquÃ­ puedes activar otros scripts o realizar acciones adicionales
     }
 }
