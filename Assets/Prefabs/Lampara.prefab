@@ -67,7 +67,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+
   m_Sprite: {fileID: 21300000, guid: 9d2a84e094380ba45b77a3a660058184, type: 3}
+
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,4 +91,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499ffb399f4f6d54ab2654efd019f8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
   requiredTag: BombillaBuena
+
